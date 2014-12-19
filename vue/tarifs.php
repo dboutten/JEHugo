@@ -1,5 +1,5 @@
 <?php
     $menu = menu();
-    $contenu = "Contenu de la page 3";
+    $contenu = "Contenu de la page Tarifs";
     
     include 'gabarit.php';
