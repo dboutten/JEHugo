@@ -106,6 +106,10 @@ administrateurs de biens, hôtels et particuliers sur Paris et sa banlieue depui
           <h4>Electricité toutes marques : E.L.M. Leblanc...</h4>
         </div>
       </div>
+      <div class="row logo2">
+        <img src="img/logo2.png" id="logo2">
+        <h4>Installateurs agréés - Installations commerciales - Installations domestiques - Références disponibles</h4>
+       </div> 
     </div>
     <!--END: Skills container-->
     <!-- Social Icons -->

@@ -329,6 +329,15 @@ ul.work-images li img:hover {
 	text-decoration: underline;
 }
 
+#logo2 {
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+	margin-top: 30px;
+}
+.logo2 {
+	text-align: center;
+}
 
 .banner2 {
 	/*background-image: url("../img/overlay.png"), url("../img/banner2JE.png");
