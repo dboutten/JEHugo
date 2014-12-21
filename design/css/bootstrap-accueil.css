@@ -174,7 +174,6 @@ body {
 		background-position: top left,						center center;
 		background-repeat: repeat,							no-repeat;
 		background-size: auto,							cover;
-		padding: 0 0 20em 0;
 		background-attachment: scroll,							fixed;
 }
 a {

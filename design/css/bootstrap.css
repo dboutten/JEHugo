@@ -104,7 +104,7 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 	cursor: pointer;
 }
 label, select, button, input[type="button"], input[type="reset"], input[type="submit"], input[type="radio"], input[type="checkbox"] {
-	cursor: pointer;
+
 }
 input[type="search"] {
 	-webkit-box-sizing: content-box;
@@ -1025,9 +1025,9 @@ label {
 	margin-bottom: 5px;
 }
 select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
-	color: #555555;
+	color: black;
 	display: inline-block;
-	font-size: 14px;
+	font-size: 18px;
 	height: 28px;
 	line-height: 28px;
 	margin-bottom: 10px;
@@ -1037,6 +1037,7 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
+	text-align: center;
 }
 input, textarea, .uneditable-input {
 	width: 206px;
@@ -1045,7 +1046,7 @@ textarea {
 	height: auto;
 }
 textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
-	background-color: #ddf3df;
+	background-color: #B2EAFA;
 	border: 0;
  -webkit-transition: background-color linear .2s;
  -moz-transition: background-color linear .2s;
@@ -1054,12 +1055,12 @@ textarea, input[type="text"], input[type="password"], input[type="datetime"], in
 }
 textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus {
 	border-color: rgba(82, 168, 236, 0.8);
-	background-color: #95e09c;
+	background-color: #05CAFB;
 	outline: 0;
 	outline: thin dotted \9;/* IE6-9 */
 }
 input[type="radio"], input[type="checkbox"] {
-	margin: 4px 0 0;
+	margin: 0px 10px 0;
  *margin-top: 0;
 	/* IE7 */
 
@@ -4038,9 +4039,8 @@ to {
 }
 .modal-body {
 	position: relative;
-	overflow-y: auto;
-	max-height: 400px;
 	padding: 15px;
+	margin-bottom: 2%;
 	text-align: center;
 	color:#242424;
 }

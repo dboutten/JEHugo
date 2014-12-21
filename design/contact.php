@@ -43,8 +43,8 @@
             </br>
             0 805 69 68 65 (Appel gratuit)</br>
             06 59 50 67 37 (Urgences)</br>
-            01 84 17 65 43 (Bureaux)</h4>
-
+            01 84 17 65 43 (Bureaux)</br></h4>
+<div class="formulaire modal-body">
     <?php
         echo(envoie());
 
@@ -88,30 +88,30 @@
                     echo form ();
                 } else {
 
-                echo ("Merci de nous avoir contacté, ".$_POST['nom']."<br/>");
+                echo ("<h4>Merci de nous avoir contacté, ".$_POST['nom']."</h4><br/>");
                 // On affiche ce que l'utilsateur a envoyé
                     if (!empty($_POST['depannage']) || !empty($_POST['installation']) || !empty($_POST['conseils'])){ ?>
-                        Vous avez demandé :<br/>
-                        <ul>
+                        <h4>Vous avez demandé :</h4>
+                        <ul style="list-style-type: none;" >
                             <?php
                             if (!empty($_POST['depannage'])) { ?>
-                                <li>un dépannage</li>
+                                <li><h4>un dépannage</h4></li>
                             <?php }
                             if (!empty($_POST['installation'])) { ?>
-                                <li>une installation</li>
+                                <li><h4>une installation</h4></li>
                             <?php }
                             if (!empty($_POST['conseils'])) { ?>
-                                <li>des conseils</li>
+                                <li><h4>des conseils</h4></li>
                             <?php } ?>
                         </ul>
-                        Dans le domaine : <?php echo($_POST['domaine']); ?>
+                        <h4>Dans le domaine : <?php echo($_POST['domaine']); ?></h4>
                         <br/><br/>
-                        Votre message :<br/>
+                        <h4>Votre message :<br/>
                         <?php echo($_POST['mess']); ?>
                         <br/><br/>
                         Nous vous contacterons au plus vite au coordonnées que vous avez laissés : <br/>
                         Votre numéro de téléphone : <?php echo($_POST['tel']); ?><br/>
-                        Votre adresse mail : <?php echo($_POST['mail']); ?><br/><br/>
+                        Votre adresse mail : <?php echo($_POST['mail']); ?><br/><br/></h4>
                     <?php }
 
                 }
@@ -132,7 +132,7 @@
             <?php if (isset($error["nom"])&&!empty($error["nom"])) { ?> <!-- si il y a une erreur et que la variable error associée à nomE existe -->
                 <div class="error"><?php echo $error["nom"] ?></div> <!-- affiche l'erreur -->
             <?php } ?>
-            <label for="nom">Votre nom :</label><br/>
+            <label for="nom"><h4>Votre nom :</h4></label><br/>
             <!-- Ajout du champ prérempli -->
             <?php if( isset($_POST["nom"])){ ?>
                 <input type="text" name="nom" value="<?php echo ($_POST["nom"]);?>"><br /><br/>
@@ -145,7 +145,7 @@
             <?php if (isset($error["tel"])&&!empty($error["tel"])) { ?> <!-- si il y a une erreur et que la variable error associée à nomE existe -->
                 <div class="error"><?php echo $error["tel"] ?></div> <!-- affiche l'erreur -->
             <?php } ?>
-            <label for="tel">Votre numéro de téléphone :</label><br/>
+            <label for="tel"><h4>Votre numéro de téléphone :</h4></label><br/>
             <!-- Ajout du champ prérempli -->
             <?php if( isset($_POST["tel"])){ ?>
                 <input type="text" name="tel" value="<?php echo ($_POST["tel"]);?>"><br /><br/>
@@ -159,7 +159,7 @@
             <?php if (isset($error["mail"])&&!empty($error["mail"])) { ?> <!-- si il y a une erreur et que la variable error associée à nomE existe -->
                 <div class="error"><?php echo $error["mail"] ?></div> <!-- affiche l'erreur -->
             <?php } ?>
-            <label for="mail">Votre email :</label><br/>
+            <label for="mail"><h4>Votre email :</h4></label><br/>
             <!-- Ajout du champ prérempli -->
             <?php if( isset($_POST["mail"])){ ?>
                 <input type="text" name="mail" value="<?php echo ($_POST["mail"]);?>"><br /><br/>
@@ -193,9 +193,9 @@
                     <input type="checkbox" name="conseils" value="1">Conseils<br /><br/>
                 <?php } ?>
             <?php }else{ ?>
-                <input type="checkbox" name="depannage" value="1"/>Dépannage<br />
-                <input type="checkbox" name="installation" value="1">Installation<br />
-                <input type="checkbox" name="conseils" value="1">Conseils<br /><br/>
+                <h4><input type="checkbox" class="switch" name="depannage" value="1"/>  Dépannage<br />
+                <input type="checkbox" name="installation" value="1">  Installation<br />
+                <input type="checkbox" name="conseils" value="1">  Conseils<br /><br/></h4>
             <?php } ?>
 
             <!-- domaine -->
@@ -205,66 +205,66 @@
             <?php } ?>
             <!-- Ajout du champ prérempli -->
             <?php if( isset($_POST["domaine"])){ ?>
-                <select name="domaine" multiple size="5" cols="30">
+                <h4><select name="domaine" multiple size="5" cols="30">
                     <?php
                     if ($_POST['domaine']=="Plomberie") { ?>
-                        <option value="Plomberie" selected="selected">Plomberie</option>
+                        <h4><option value="Plomberie" selected="selected">Plomberie</option></h4>
                     <?php } else { ?>
-                        <option value="Plomberie">Plomberie</option>
+                        <h4><option value="Plomberie">Plomberie</option></h4>
                     <?php }
                     if ($_POST['domaine']=="Electricité") { ?>
-                        <option value="Electricité" selected="selected">Electricité</option>
+                        <h4><option value="Electricité" selected="selected">Electricité</option></h4>
                     <?php } else { ?>
-                        <option value="Electricité">Electricité</option>
+                        <h4><option value="Electricité">Electricité</option></h4>
                     <?php }
                     if ($_POST['domaine']=="Serrurerie") { ?>
-                        <option value="Serrurerie" selected="selected">Serrurerie</option>
+                        <h4><option value="Serrurerie" selected="selected">Serrurerie</option></h4>
                     <?php } else { ?>
-                        <option value="Serrurerie">Serrurerie</option>
+                        <h4><option value="Serrurerie">Serrurerie</option></h4>
                     <?php }
                     if ($_POST['domaine']=="Maçonnerie") { ?>
-                        <option value="Maçonnerie" selected="selected">Maçonnerie</option>
+                        <h4><option value="Maçonnerie" selected="selected">Maçonnerie</option></h4>
                     <?php } else { ?>
-                        <option value="Maçonnerie">Maçonnerie</option>
+                        <h4><option value="Maçonnerie">Maçonnerie</option></h4>
                     <?php }
                     if ($_POST['domaine']=="Menuiserie") { ?>
-                        <option value="Menuiserie" selected="selected">Menuiserie</option>
+                        <h4><option value="Menuiserie" selected="selected">Menuiserie</option></h4>
                     <?php } else { ?>
-                        <option value="Menuiserie">Menuiserie</option>
+                        <h4><option value="Menuiserie">Menuiserie</option></h4>
                     <?php }
                     if ($_POST['domaine']=="Peinture") { ?>
-                        <option value="Peinture" selected="selected">Peinture</option>
+                        <h4><option value="Peinture" selected="selected">Peinture</option></h4>
                     <?php } else { ?>
-                        <option value="Peinture">Peinture</option>
+                        <h4><option value="Peinture">Peinture</option></h4>
                     <?php }
                     if ($_POST['domaine']=="Chauffage") { ?>
-                        <option value="Chauffage" selected="selected">Chauffage</option>
+                        <h4><option value="Chauffage" selected="selected">Chauffage</option></h4>
                     <?php } else { ?>
-                        <option value="Chauffage">Chauffage</option>
+                        <h4><option value="Chauffage">Chauffage</option></h4>
                     <?php }
                     if ($_POST['domaine']=="Vitrerie") { ?>
-                        <option value="Vitrerie" selected="selected">Vitrerie</option>
+                        <h4><option value="Vitrerie" selected="selected">Vitrerie</option></h4>
                     <?php } else { ?>
-                        <option value="Vitrerie">Vitrerie</option>
+                        <h4><option value="Vitrerie">Vitrerie</option></h4>
                     <?php }
                     if ($_POST['domaine']=="Carrelage") { ?>
-                        <option value="Carrelage" selected="selected">Carrelage</option>
+                        <h4><option value="Carrelage" selected="selected">Carrelage</option></h4>
                     <?php } else { ?>
-                        <option value="Carrelage">Carrelage</option>
+                        <h4><option value="Carrelage">Carrelage</option></h4>
                     <?php }
                     if ($_POST['domaine']=="Décoration") { ?>
-                        <option value="Décoration" selected="selected">Décoration</option>
+                        <h4><option value="Décoration" selected="selected">Décoration</option></h4>
                     <?php } else { ?>
-                        <option value="Décoration">Décoration</option>
+                        <h4><option value="Décoration">Décoration</option></h4>
                     <?php }
                     if ($_POST['domaine']=="Aménagement") { ?>
-                        <option value="Aménagement" selected="selected">Aménagement</option>
+                        <h4><option value="Aménagement" selected="selected">Aménagement</option></h4>
                     <?php } else { ?>
-                        <option value="Aménagement">Aménagement</option>
+                        <h4><option value="Aménagement">Aménagement</option></h4>
                     <?php } ?>
-                </select><br/><br/>
+                </select></h4><br/><br/>
             <?php }else{ ?>
-                <select name="domaine" multiple size="5" cols="30">
+                <select name="domaine" multiple size="5" rows="3" style="width:80%">
                     <option value="Plomberie">Plomberie</option>
                     <option value="Electricité">Electricité</option>
                     <option value="Serrurerie">Serrurerie</option>
@@ -285,15 +285,15 @@
             <?php if (isset($error["mess"])&&!empty($error["mess"])) { ?> <!-- si il y a une erreur et que la variable error associée à nomE existe -->   
                 <div class="error"><?php echo $error["mess"]; ?></div> <!-- affiche l'erreur -->
             <?php } ?>
-            <label for="mess">Votre message :</label></br>
+            <label for="mess"><h4>Votre message :</h4></label></br>
             <!-- Ajout du champ prérempli -->
             <?php if( isset($_POST["mess"])){ ?>
-                <textarea name="mess" rows="8" cols="45"><?php echo $_POST["mess"]; ?></textarea> <br /><br/>
+                <textarea name="mess" rows="3" style="width:80%"><?php echo $_POST["mess"]; ?></textarea> <br /><br/>
             <?php }else{ ?>
-                <textarea name="mess" rows="8" cols="45"></textarea> <br /><br/>
+                <textarea name="mess" rows="3" style="width:80%"></textarea> <br /><br/>
             <?php } ?>
 
-            <input type="submit" value="Envoyer" />
+            <input type="submit" class="btn btn-info" value="Envoyer" />
 
             </form>
             <?php
@@ -302,7 +302,7 @@
         } ?>
 
 
-
+</div>
     </div>
     <!--END: Resume container-->
     <!-- Social Icons -->

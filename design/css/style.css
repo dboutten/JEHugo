@@ -36,6 +36,7 @@ a.brand img {
 .telephone{
 	margin: auto;
 	width: 600px;
+	padding-bottom: 3%;
 }
 
 .hire-me {
@@ -348,4 +349,6 @@ ul.work-images li img:hover {
 		margin-top: -2%;
 		background-attachment: local;
 		/*background-attachment: scroll,							fixed;*/
+}
+.formulaire {
 }
