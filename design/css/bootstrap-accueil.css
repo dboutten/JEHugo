@@ -175,7 +175,6 @@ body {
 		background-repeat: repeat,							no-repeat;
 		background-size: auto,							cover;
 		padding: 0 0 20em 0;
-		margin-top: ;
 		background-attachment: scroll,							fixed;
 }
 a {
@@ -2552,8 +2551,8 @@ button.btn.btn-mini, input[type="submit"].btn.btn-mini {
 	max-width: none;
 }
 /*.nav > .pull-right {
-	float: right;*/
-}
+	float: right;
+}*/
 .nav-header {
 	display: block;
 	padding: 3px 15px;

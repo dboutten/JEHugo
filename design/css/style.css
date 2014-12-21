@@ -251,20 +251,20 @@ width:0px;
 width:75%;
 }
 }
-@-webkit-keyframes css {
+/*@-webkit-keyframes css {
 0% {
 width:0px;
 }
 100% {
 width:85%;
 }
-}
+}*/
 /**** Work container *****/
 ul.work-images li {
 	list-style:none;
 	display:inline-block;
 	margin: 8px 10px;
- background:
+// background:
 }
 ul.work-images li:first-child {
 	margin-left:0;

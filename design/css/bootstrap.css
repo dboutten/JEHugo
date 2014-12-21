@@ -818,7 +818,6 @@ table {
 .table th, .table td {
 	padding: 8px;
 	line-height: 20px;
-	text-align: ;
 	vertical-align: top;
 	border-top: 1px solid #dddddd;
 }
@@ -2555,8 +2554,8 @@ button.btn.btn-mini, input[type="submit"].btn.btn-mini {
 	max-width: none;
 }
 /*.nav > .pull-right {
-	float: right;*/
-}
+	float: right;
+}*/
 .nav-header {
 	display: block;
 	padding: 3px 15px;
