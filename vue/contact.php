@@ -27,14 +27,6 @@
                 $error['mail']="Vous n'avez pas donné votre adresse mail.";
             }
             
-            if (empty($_POST['depannage']) && empty($_POST['installation']) && empty($_POST['conseils'])) {
-                $error['type']="Vous devez préciser quel travail est demandé.";
-            }
-            
-            if (empty($_POST['domaine'])) {
-                $error['domaine']="Veuillez préciser au moins un domaine.";
-            }
-            
             if (empty($_POST['mess'])) {
                 $error['mess']="Veuillez préciser votre demande.";
             }
@@ -68,7 +60,9 @@
                     Nous vous contacterons au plus vite au coordonnées que vous avez laissés : <br/>
                     Votre numéro de téléphone : <?php echo($_POST['tel']); ?><br/>
                     Votre adresse mail : <?php echo($_POST['mail']); ?><br/><br/>
-                <?php }
+                    <?php echo envoiemail('dorine.boutten@yahoo.fr');
+                
+                }
             
             }
         }
@@ -256,3 +250,55 @@
         $form = ob_get_clean();
         return $form;
     }
+    
+    function envoiemail($mail){
+    ob_start();
+
+    if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $mail))
+    {
+        $passage_ligne = "\r\n";
+    }
+    else
+    {
+        $passage_ligne = "\n";
+    }
+    
+    //=====Déclaration des messages au format texte et au format HTML.
+    $message_txt = "Salut à tous, voici un e-mail envoyé par un script PHP.";
+    $message_html = "<html><head></head><body><b>Salut à tous</b>, voici un e-mail envoyé par un <i>script PHP</i>.</body></html>";
+
+    $boundary = "-----=".md5(rand());
+    
+    $sujet = "hey mon ami !";
+
+    // Création du header de l'e-mail
+    $header = "From: <dorine.boutten@yahoo.fr>".$passage_ligne;
+    $header .= "Reply-to: \"site\" <dorine.boutten@yahoo.fr>".$passage_ligne;
+    $header .= "MIME-Version: 1.0".$passage_ligne;
+    $header .= "Content-Type: multipart/alternative;".$passage_ligne." boundary=\"$boundary\"".$passage_ligne;
+    
+    // Création du contenu
+    $message = $passage_ligne."--".$boundary.$passage_ligne;
+    $message .= "Content-Type: text/plain; charset=\"ISO-8859-1\"".$passage_ligne;
+    $message .= "Content-Transfer-Encoding: 8bit".$passage_ligne;
+    $message.= $passage_ligne.$message_txt.$passage_ligne;
+    
+    $message.= $passage_ligne."--".$boundary.$passage_ligne;
+    
+    //=====Ajout du message au format HTML
+    $message.= "Content-Type: text/html; charset=\"ISO-8859-1\"".$passage_ligne;
+    $message.= "Content-Transfer-Encoding: 8bit".$passage_ligne;
+    $message.= $passage_ligne.$message_html.$passage_ligne;
+    
+    $message.= $passage_ligne."--".$boundary."--".$passage_ligne;
+    $message.= $passage_ligne."--".$boundary."--".$passage_ligne;
+
+    //=====Envoi de l'e-mail.
+    mail($mail,$sujet,$message,$header);
+    //mail('dorine.boutten@yahoo.fr','hello','hello');
+    echo("bonjour");
+
+    
+    $envoiemail=ob_get_clean();
+    return $envoiemail;
+}
