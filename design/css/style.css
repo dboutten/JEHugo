@@ -340,6 +340,9 @@ ul.work-images li img:hover {
 	text-align: center;
 }
 
+.resume {
+	margin-bottom: 0px;
+}
 .banner2 {
 	/*background-image: url("../img/overlay.png"), url("../img/banner2JE.png");
 		background-position: top left,						center center;
@@ -351,4 +354,8 @@ ul.work-images li img:hover {
 		/*background-attachment: scroll,							fixed;*/
 }
 .formulaire {
+}
+
+.work ul, ol {
+	padding:0;
 }

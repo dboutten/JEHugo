@@ -38,12 +38,13 @@
     <!-- Resume container -->
     <div class="container resume contact">
       <h2>A l'Eau Bleue De Paris</h2>
-      <h4>23 rue de Richelieu</br>
-          75001 Paris</br>
+      <h4>Siège social : 23 rue de Richelieu, 75001 Paris</br>
+Boutique : 5 Bis rue du Dahomey, 75011 Paris </br>
             </br>
             0 805 69 68 65 (Appel gratuit)</br>
             06 59 50 67 37 (Urgences)</br>
-            01 84 17 65 43 (Bureaux)</br></h4>
+            01 84 17 65 43 (Bureaux)</br>
+            09 81 96 06 06 (Boutique)</br></h4>
 <div class="formulaire modal-body">
     <?php
         echo(envoie());
@@ -193,7 +194,7 @@
                     <input type="checkbox" name="conseils" value="1">Conseils<br /><br/>
                 <?php } ?>
             <?php }else{ ?>
-                <h4><input type="checkbox" class="switch" name="depannage" value="1"/>  Dépannage<br />
+                <h4><input type="checkbox" name="depannage" value="1"/>  Dépannage<br />
                 <input type="checkbox" name="installation" value="1">  Installation<br />
                 <input type="checkbox" name="conseils" value="1">  Conseils<br /><br/></h4>
             <?php } ?>
@@ -306,16 +307,13 @@
     </div>
     <!--END: Resume container-->
     <!-- Social Icons -->
-    <!--<div class="row social">
+    <div class="row social">
       <ul class="social-icons">
-        <li><a href="#" target="_blank"><img src="img/fb.png" alt="facebook"></a></li>
-        <li><a href="#" target="_blank"><img src="img/tw.png" alt="twitter"></a></li>
-        <li><a href="#" target="_blank"><img src="img/go.png" alt="google plus"></a></li>
-        <li><a href="#" target="_blank"><img src="img/pin.png" alt="pinterest"></a></li>
-        <li><a href="#" target="_blank"><img src="img/st.png" alt="stumbleupon"></a></li>
-        <li><a href="#" target="_blank"><img src="img/dr.png" alt="dribbble"></a></li>
+        <li><a href="https://www.facebook.com/pages/A-LEau-Bleue-De-Paris/305059109684682?ref=hl"><img src="img/fb.png" alt="facebook"></a></li>
+        <li><a href="https://twitter.com/eaubleuedeparis"><img src="img/tw.png" alt="twitter"></a></li>
+        <li><a href="http://www.dailymotion.com/aleaubleuedeparis"><img src="img/dm.png" alt="google plus"></a></li>
       </ul>
-    </div>-->
+    </div>
     <!-- END: Social Icons -->
     <!-- Footer -->
     <div class="footer">

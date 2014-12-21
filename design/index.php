@@ -44,6 +44,7 @@
             Peinture Carrelage Maçonnerie Menuiserie Serrurerie Décoration Aménagement </p>
         </br>
         <p>Plomberie Electricité</p>
+        <p>Boutique: 5 Bis rue du Dahomey, 75011 Paris</p>
         <h3>7/7 24/24</h3>    
         <!--<a href="#" class="hire-me"><i class="icon-paper-plane"></i> Hire Me </a>-->
 
