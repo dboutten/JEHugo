@@ -61,24 +61,24 @@
       <h2>My Work</h2>
       <ul class="work-images">
         <li>
-          <div><a class="fancybox-thumb" rel="fancybox-thumb" href="img/1.jpg" title="Image 01"><img src="img/1-thumb.jpg" /></a></div>
+          <div id="avant"><a class="fancybox-thumb" rel="fancybox-thumb" href="img/1.jpg" title="Image 01"><img src="img/1-thumb.jpg" /></a></div>
         </li>
         <li>
-          <div><a class="fancybox-thumb" rel="fancybox-thumb" href="img/2.jpg"><img src="img/2-thumb.jpg" /></a></div>
+          <div id="apres"><a class="fancybox-thumb" rel="fancybox-thumb" href="img/2.jpg"><img src="img/2-thumb.jpg" /></a></div>
         </li>
         <li>
-          <div><a class="fancybox-thumb" rel="fancybox-thumb" href="img/3.jpg"><img src="img/3-thumb.jpg" /></a></div>
+          <div id="apres"><a class="fancybox-thumb" rel="fancybox-thumb" href="img/3.jpg"><img src="img/3-thumb.jpg" /></a></div>
         </li>
       </ul>
       <ul class="work-images">
         <li>
-          <div><a class="fancybox-thumb" rel="fancybox-thumb" href="img/4.jpg"><img src="img/4-thumb.jpg" /></a></div>
+          <div id="avant"><a class="fancybox-thumb" rel="fancybox-thumb" href="img/4.jpg"><img src="img/4-thumb.jpg" /></a></div>
         </li>
         <li>
-          <div><a class="fancybox-thumb" rel="fancybox-thumb" href="img/5.jpg"><img src="img/5-thumb.jpg" /></a></div>
+          <div id="apres"><a class="fancybox-thumb" rel="fancybox-thumb" href="img/5.jpg"><img src="img/5-thumb.jpg" /></a></div>
         </li>
         <li>
-          <div><a class="fancybox-thumb" rel="fancybox-thumb" href="img/6.jpg"><img src="img/6-thumb.jpg" /></a></div>
+          <div id="apres"><a class="fancybox-thumb" rel="fancybox-thumb" href="img/6.jpg"><img src="img/6-thumb.jpg" /></a></div>
         </li>
       </ul>
       <ul class="work-images">
@@ -92,6 +92,13 @@
     <!-- Social Icons -->
     <div class="row social">
       <ul class="social-icons">
+        <li><a href="https://www.facebook.com/pages/A-LEau-Bleue-De-Paris/305059109684682?ref=hl"><img src="img/fb.png" alt="facebook"></a></li>
+        <li><a href="https://twitter.com/eaubleuedeparis"><img src="img/tw.png" alt="twitter"></a></li>
+        <li><a href="http://www.dailymotion.com/aleaubleuedeparis"><img src="img/dm.png" alt="google plus"></a></li>
+      </ul>
+    </div>
+    <!--<div class="row social">
+      <ul class="social-icons">
         <li><a href="#" target="_blank"><img src="img/fb.png" alt="facebook"></a></li>
         <li><a href="#" target="_blank"><img src="img/tw.png" alt="twitter"></a></li>
         <li><a href="#" target="_blank"><img src="img/go.png" alt="google plus"></a></li>
@@ -99,7 +106,7 @@
         <li><a href="#" target="_blank"><img src="img/st.png" alt="stumbleupon"></a></li>
         <li><a href="#" target="_blank"><img src="img/dr.png" alt="dribbble"></a></li>
       </ul>
-    </div>
+    </div>-->
     <!-- END: Social Icons -->
     <!-- Footer -->
     <div class="footer">

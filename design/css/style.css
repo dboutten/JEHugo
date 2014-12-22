@@ -271,7 +271,15 @@ ul.work-images li:first-child {
 	margin-left:0;
 }
 ul.work-images li div {
-	background:url(../img/eye.png) 50% 50% no-repeat;
+	/*background:url(../img/eyeavant.png) 50% 50% no-repeat;
+	background-color: #f04949;
+	-webkit-transition: all 0.2s linear;
+	-moz-transition: all 0.2s linear;
+	-o-transition: all 0.2s linear;
+	transition: all 0.2s linear;*/
+}
+#avant {
+	background:url(../img/eyeavant.png) 50% 50% no-repeat;
 	background-color: #f04949;
 	-webkit-transition: all 0.2s linear;
 	-moz-transition: all 0.2s linear;
@@ -287,6 +295,42 @@ ul.work-images li img {
 ul.work-images li img:hover {
 	opacity:0.1;
 }
+
+ul.work-images2 li {
+	list-style:none;
+	display:inline-block;
+	margin: 8px 10px;
+// background:
+}
+ul.work-images2 li:first-child {
+	margin-left:0;
+}
+ul.work-images2 li div {
+	/*background:url(../img/eyeapres.png) 50% 50% no-repeat;
+	background-color: #f04949;
+	-webkit-transition: all 0.2s linear;
+	-moz-transition: all 0.2s linear;
+	-o-transition: all 0.2s linear;
+	transition: all 0.2s linear;*/
+}
+#apres {
+		background:url(../img/eyeapres.png) 50% 50% no-repeat;
+	background-color: #f04949;
+	-webkit-transition: all 0.2s linear;
+	-moz-transition: all 0.2s linear;
+	-o-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+}
+ul.work-images2 li img {
+	-webkit-transition: all 0.2s linear;
+	-moz-transition: all 0.2s linear;
+	-o-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+}
+ul.work-images2 li img:hover {
+	opacity:0.1;
+}
+
 /***** Resume container *****/
 .resume h3 {
 	margin:60px 0;
