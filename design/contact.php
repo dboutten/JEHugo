@@ -368,8 +368,8 @@ function envoiemail($mail, $message_txt, $message_html){
     $boundary_alt = "-----=".md5(rand());
     
     //=====Lecture et mise en forme de la pièce jointe.
-    $fichier   = fopen("/img/eaubleue.png", "r");
-    $attachement = fread($fichier, filesize("/img/eaubleue.png"));
+    $fichier   = fopen("/Users/Danny/Desktop/eaubleue.png", "r");
+    $attachement = fread($fichier, filesize("/Users/Danny/Desktop/eaubleue.png"));
     $attachement = chunk_split(base64_encode($attachement));
     fclose($fichier);
        
@@ -385,12 +385,11 @@ function envoiemail($mail, $message_txt, $message_html){
     $message = $passage_ligne."--".$boundary.$passage_ligne;
     $message.= "Content-Type: multipart/alternative;".$passage_ligne." boundary=\"$boundary_alt\"".$passage_ligne;
     $message.= $passage_ligne."--".$boundary_alt.$passage_ligne;
-    //=====Ajout du message au format texte.
-    $message.= "Content-Type: text/plain; charset=\"ISO-8859-1\"".$passage_ligne;
+    //=====Ajout du message au format texte
+    /*$message.= "Content-Type: text/plain; charset=\"ISO-8859-1\"".$passage_ligne;
     $message.= "Content-Transfer-Encoding: 8bit".$passage_ligne;
     $message.= $passage_ligne.$message_txt.$passage_ligne;
-    
-    $message.= $passage_ligne."--".$boundary.$passage_ligne;
+    $message.= $passage_ligne."--".$boundary.$passage_ligne;*/
     
     //=====Ajout du message au format HTML
     $message.= "Content-Type: text/html; charset=\"ISO-8859-1\"".$passage_ligne;

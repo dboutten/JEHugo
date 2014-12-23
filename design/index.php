@@ -34,7 +34,7 @@
       </div>
     </div>
     <!--Profile container-->
-    <div class="banner">
+    <!--<div class="banner">-->
     <div class="container profile">
       <div class="span5"> <img src="img/eaubleue_vector.png" id="image-accueil"> </div>
       <div class="span5 accueil-texte">
@@ -53,8 +53,12 @@
     <div class="telephone container">
         <div class="hire-me"><div class="numero"> 01 84 17 65 43 </div><div class="texte_numero">Bureaux</div></div>
         <div class="hire-me"><div class="numero"> 06 59 50 67 37 </div><div class="texte_numero">Urgences</div></div>
+      </br>
+      </br>
+      </br>
+      </br>
     </div>
-    </div>
+    <!--</div>-->
     <!--END: Profile container-->
     <!-- Social Icons -->
     <!--<div class="row social">
