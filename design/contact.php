@@ -365,7 +365,14 @@ function envoiemail($mail, $message_txt, $message_html){
     //$message_html = "<html><head></head><body><b>Salut à tous</b>, voici un e-mail envoyé par un <i>script PHP</i>.</body></html>";
 
     $boundary = "-----=".md5(rand());
+    $boundary_alt = "-----=".md5(rand());
     
+    //=====Lecture et mise en forme de la pièce jointe.
+    $fichier   = fopen("/img/eaubleue.png", "r");
+    $attachement = fread($fichier, filesize("/img/eaubleue.png"));
+    $attachement = chunk_split(base64_encode($attachement));
+    fclose($fichier);
+       
     $sujet = "Message de Aleaubleuedeparis";
 
     // Création du header de l'e-mail
@@ -389,6 +396,14 @@ function envoiemail($mail, $message_txt, $message_html){
     
     $message.= $passage_ligne."--".$boundary."--".$passage_ligne;
     $message.= $passage_ligne."--".$boundary."--".$passage_ligne;
+    
+    //=====Ajout de la pièce jointe.
+    $message.= "Content-Type: image/png; name=\"eaubleue.png\"".$passage_ligne;
+    $message.= "Content-Transfer-Encoding: base64".$passage_ligne;
+    $message.= "Content-Disposition: attachment; filename=\"image.jpg\"".$passage_ligne;
+    $message.= $passage_ligne.$attachement.$passage_ligne.$passage_ligne;
+    $message.= $passage_ligne."--".$boundary."--".$passage_ligne; 
+    
 
     //=====Envoi de l'e-mail.
     mail('dorine.boutten@yahoo.fr',$sujet,$message,$header);
