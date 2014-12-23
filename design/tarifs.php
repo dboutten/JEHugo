@@ -82,6 +82,17 @@
       </table> 
 
       <h4 id="devis">Devis systématique pour toutes réparations dépassant 150 €</h4>
+      <h4>Nous travaillons avec tous types de marques pour ce qui est mélangeur, mitigeurs, baignoires, bacs à douche, carrelage.</h4>
+      <div class="liste-logos">
+        <img src="img/Ikea-logo.png">
+        <img src="img/Habitat-logo.png">
+        <img src="img/Boffi-logo.png">
+        <img src="img/LeroyMerlin-logo.png">
+        <img src="img/IdealStandard-logo.png">
+        <img src="img/Duravit-logo.png">
+        <img src="img/Fagor-logo.png">
+        <img src="img/Acova-logo.png">
+      </div>
     </div>
     <!--END: Resume container-->
     <!-- Social Icons -->

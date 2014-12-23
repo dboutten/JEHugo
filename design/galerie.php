@@ -58,7 +58,7 @@
     </div>
     <!-- Works container -->
     <div class="container work">
-      <h2>My Work</h2>
+      <h2>Galerie</h2>
       <ul class="work-images">
         <li>
           <div id="avant"><a class="fancybox-thumb" rel="fancybox-thumb" href="img/1.jpg" title="Image 01"><img src="img/1-thumb.jpg" /></a></div>

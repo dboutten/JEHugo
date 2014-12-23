@@ -1,3 +1,5 @@
+<?php require_once('PHPMailer/class.phpmailer.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -81,6 +83,10 @@
 </html>
 
 <?php
+
+
+
+
 // Créons une fonction qui affiche le formulaire et l'envoie
 function envoie () {
     ob_start();
@@ -100,8 +106,8 @@ function envoie () {
             $error['tel']="Vous n'avez pas donné votre numéro de téléphone.";
         }
 
-        if (empty($_POST['mail'])) {
-            $error['mail']="Vous n'avez pas donné votre adresse mail.";
+        if (empty($_POST['email'])) {
+            $error['email']="Vous n'avez pas donné votre adresse mail.";
         }
 
         if (empty($_POST['mess'])) {
@@ -139,11 +145,11 @@ function envoie () {
                 <br/><br/>
                 Nous vous contacterons au plus vite aux coordonnées que vous avez laissées : <br/>
                 Votre numéro de téléphone : <?php echo($_POST['tel']); ?><br/>
-                Votre adresse mail : <?php echo($_POST['mail']); ?><br/><br/></h4>
+                Votre adresse mail : <?php echo($_POST['email']); ?><br/><br/></h4>
                 <?php
                 
                 // On écrit le message à envoyer
-                $mail = $_POST['mail'];
+                $email = $_POST['email'];
                 $message_txt=$_POST['nom']." vous a envoyé un message. ";
                 if (!empty($_POST['depannage']) || !empty($_POST['installation']) || !empty($_POST['conseils'])){
                     $message_txt.="Il/Elle souhaite ";
@@ -161,15 +167,37 @@ function envoie () {
                     $message_txt.="Le domaine qui l'intéresse est : ".($_POST['domaine']).". ";
                 }
                 
-                $message_txt.="Son message : ".$_POST['mess']." <br/>Pour le contacter : Téléphone = ".$_POST['tel']." ; son Mail = ".$_POST['mail'];
+                $message_txt.="Son message : ".$_POST['mess']." <br/>Pour le contacter : Téléphone = ".$_POST['tel']." ; son Mail = ".$_POST['email'];
                 $message_html=$message_txt;
                 echo ($message_html);
                 
                 // On envoie le mail
-                $envoiemail = envoiemail($mail,$message_txt, $message_html);
+                $mail = new PHPMailer();
+
+	$mail->IsHTML(true);
+	$mail->CharSet = "utf-8";
+	$mail->From = $email;
+	$mail->FromName = 'Contact';
+	$mail->Subject = 'Un formulaire de contact a été soumis';
+	$mail->Body = $message_html;
+	if (isset($_FILES['uploaded_file']) &&
+    $_FILES['uploaded_file']['error'] == UPLOAD_ERR_OK) {
+    	if (pathinfo($_FILES['uploaded_file']['name'], PATHINFO_EXTENSION) == 'jpg') {
+    		$mail->AddAttachment($_FILES['uploaded_file']['tmp_name'],
+                         $_FILES['uploaded_file']['name'],'base64','image/jpg'); }
+        else { echo "Mauvaise extension"; }
+ 	}                        
+
+	$mail->AddAddress('danny.canaan@gmail.com');
+	
+    $mail->Send();
+
+                /*$envoiemail = envoiemail($email,$message_txt, $message_html);
                 if ($envoie == true) {
                     echo ("le message a été envoyé");
-                }
+                }*/
+                
+                
         }
     }
 
@@ -181,7 +209,7 @@ function form() {
     ob_start();
     global $error;
     ?>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
 
     <!-- Nom -->
     <!-- Vérification erreur -->
@@ -212,15 +240,15 @@ function form() {
 
     <!-- Mail -->
     <!-- Vérification erreur -->
-    <?php if (isset($error["mail"])&&!empty($error["mail"])) { ?> <!-- si il y a une erreur et que la variable error associée à nomE existe -->
-        <div class="error"><?php echo $error["mail"] ?></div> <!-- affiche l'erreur -->
+    <?php if (isset($error["email"])&&!empty($error["email"])) { ?> <!-- si il y a une erreur et que la variable error associée à nomE existe -->
+        <div class="error"><?php echo $error["email"] ?></div> <!-- affiche l'erreur -->
     <?php } ?>
-    <label for="mail"><h4>Votre email :</h4></label><br/>
+    <label for="email"><h4>Votre email :</h4></label><br/>
     <!-- Ajout du champ prérempli -->
-    <?php if( isset($_POST["mail"])){ ?>
-        <input type="text" name="mail" value="<?php echo ($_POST["mail"]);?>"><br /><br/>
+    <?php if( isset($_POST["email"])){ ?>
+        <input type="text" name="email" value="<?php echo ($_POST["email"]);?>"><br /><br/>
     <?php }else{ ?>
-        <input type="text" name="mail"><br /><br/>
+        <input type="text" name="email"><br /><br/>
     <?php } ?>
 
     <!-- Type -->
@@ -340,6 +368,13 @@ function form() {
         <textarea name="mess" rows="3" style="width:80%"></textarea> <br /><br/>
     <?php } ?>
 
+
+	<input type="file" name="uploaded_file" id="uploaded_file" />
+  	<input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
+
+
+
+
     <input type="submit" class="btn btn-info" value="Envoyer" />
 
     </form>
@@ -348,10 +383,23 @@ function form() {
     return $form;
 }
 
-function envoiemail($mail, $message_txt, $message_html){
-    ob_start();
+	/*function envoiemail($email, $message_txt, $message_html){
+	ob_start();
 
-    if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $mail))
+	 $mail = new PHPMailer();
+
+	$mail->IsHTML(true);
+	$mail->CharSet = "utf-8";
+	$mail->From = $email;
+	$mail->Subject = 'AleaubleuedeParis';
+	$mail->Body = $message_html;
+	$mail->AddAddress('danny.canaan@gmail.com');
+
+    $mail->Send();
+
+}
+
+    /*if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $mail))
     {
         $passage_ligne = "\r\n";
     }
@@ -389,7 +437,7 @@ function envoiemail($mail, $message_txt, $message_html){
     /*$message.= "Content-Type: text/plain; charset=\"ISO-8859-1\"".$passage_ligne;
     $message.= "Content-Transfer-Encoding: 8bit".$passage_ligne;
     $message.= $passage_ligne.$message_txt.$passage_ligne;
-    $message.= $passage_ligne."--".$boundary.$passage_ligne;*/
+    $message.= $passage_ligne."--".$boundary.$passage_ligne;
     
     //=====Ajout du message au format HTML
     $message.= "Content-Type: text/html; charset=\"ISO-8859-1\"".$passage_ligne;
@@ -414,5 +462,5 @@ function envoiemail($mail, $message_txt, $message_html){
     
     $envoiemail=ob_get_clean();
     return $envoiemail;
-}
+}*/
 
